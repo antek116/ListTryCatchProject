@@ -1,0 +1,21 @@
+group 'Strategy'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
+sourceCompatibility = 7
+
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
