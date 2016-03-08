@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * Created by INV-6179 on 03.03.2016.
+ * Class to Tests.
  */
 public class ListTest {
     private List<Integer> list, listSecond;

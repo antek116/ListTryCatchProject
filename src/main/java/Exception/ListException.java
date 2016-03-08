@@ -1,13 +1,11 @@
 package Exception;
 
 /**
- *
  * Class of ListException
  */
-public abstract class ListException extends RuntimeException{
-    /**
-     * Number of index.
-     */
-    protected int index ;
-    ListException(){super();}
+public abstract class ListException extends RuntimeException {
+
+    public ListException(String s) {
+        super(s);
+    }
 }
