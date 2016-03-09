@@ -35,6 +35,9 @@ public abstract class List<E> implements Interfaces.List<E> {
     public boolean contains(E o) {
         Node tmpNode = head;
         for (int i = 0; i < size; i++) {
+            if(tmpNode.getNextNode() != null && tmpNode.getNextNode().getData() == null){
+                continue;
+            }
             if (tmpNode.getNextNode() != null && tmpNode.getNextNode().getData().equals(o)) {
                 return true;
             }

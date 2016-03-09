@@ -3,6 +3,7 @@ import Exception.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.omg.PortableInterceptor.SUCCESSFUL;
 
 import static org.junit.Assert.*;
 
@@ -168,52 +169,58 @@ public class ListTest {
     }
 
     @Test (expected = GetMethodException.class)
-    public void shouldCatchGetMethodException() throws GetMethodException {
+    public void shouldThrowGetMethodException(){
         //given
         List<Integer> list = new List<Integer>();
-        //when
         int index = 10;
-        //then
+        //when
         list.get(index);
+        //then
+        fail("Should be Exception thrown");
     }
     @Test
-    public void shouldNotCatchGetMethodException() throws GetMethodException{
+    public void shouldNotThrowGetMethodException(){
         //given
         List<Integer> list = new List<Integer>();
         list.addElement(23);
         list.addElement(41);
         list.addElement(32);
-        //when
         int index = 1;
+        //when
+        Integer value = list.get(index);
         //then
-        list.get(index);
+        assertEquals((Integer)41,value);
     }
     @Test (expected = RemoveMethodException.class)
-    public void shouldCatchRemoveMethodException() throws RemoveMethodException {
+    public void shouldCatchRemoveMethodException(){
         //given
         List<Integer> list = new List<Integer>();
-        //when
         int index = 10;
-        //then
+        //when
         list.removeElement(index);
+        //then
+        fail("Should be ExceptionThrown");
     }
     @Test(expected = GetMethodException.class)
-    public void shouldNotCatchGetMethodExceptionForStringToInteger() throws GetMethodException {
+    public void shouldNotCatchGetMethodExceptionForStringToInteger(){
         //given
         List<Integer> list = new List<Integer>();
-        //when
         int index =Integer.parseInt("123");
-        //then
+        //when
         list.get(index);
+        //then
+        fail("Should be ExceptionThrown");
     }
     @Test(expected = GetMethodException.class)
-    public void shouldReturnGetMethodExceptionWhenElementNotExist() throws GetMethodException {
+    public void shouldReturnGetMethodExceptionWhenElementNotExist(){
         //given
         List<Integer> list = new List<Integer>();
-        //when
         int index = 0;
-        //then
+        //when
         list.get(index);
+        //then
+        fail("Should be ExceptionThrown");
+
     }
     @Test
     public void shouldReturnFalseIfElementNotExist(){
@@ -231,7 +238,7 @@ public class ListTest {
         assertFalse(is);
     }
     @Test (expected = RemoveMethodException.class)
-    public void shouldReturnRemoveMethodExceptionWhenTryToRemoveMoreThanOneTIme() throws RemoveMethodException {
+    public void shouldReturnRemoveMethodExceptionWhenTryToRemoveMoreThanOneTIme(){
         //given
         class tmpClass {
             public int tmpInt;
@@ -251,5 +258,6 @@ public class ListTest {
         //when
         list.removeElement(1);
         //then Exception
+        fail("Should be ExceptionThrown");
     }
 }
