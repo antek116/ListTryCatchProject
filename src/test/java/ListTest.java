@@ -120,13 +120,6 @@ public class ListTest {
         assertEquals("incorrect status of list", false, list.isEmpty());
     }
 
-    //TODO append if to method below
-   /* @Test
-    public void testIsEmptyAfterRemoveOnlyElement() throws Exception {
-        list.addElement(5);
-        list.removeElement(0);
-        assertEquals("incorrect status of list", true, list.isEmpty());
-    }*/
     @Test
     public void testIsEmptyAfterClearList() throws Exception {
         listSecond.clear();
